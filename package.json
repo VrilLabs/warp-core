@@ -1,0 +1,48 @@
+{
+  "name": "@kronos/warp-core",
+  "version": "0.1.0",
+  "description": "Sub-microsecond reactive runtime — SharedArrayBuffer-backed signals with true cross-thread propagation, zero postMessage overhead, and fleet-aware effect scheduling.",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "test": "tsc -p tsconfig.test.json && mocha dist/**/*.test.js --timeout 5000",
+    "prepublishOnly": "npm run build"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "keywords": [
+    "signals",
+    "reactive",
+    "shared-array-buffer",
+    "cross-thread",
+    "atomics",
+    "effect-scope",
+    "state-management",
+    "worker"
+  ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/VrilLabs/kronos-timewarp",
+    "directory": "packages/warp-core"
+  },
+  "devDependencies": {
+    "typescript": "^5.6.0",
+    "@types/node": "^22.0.0",
+    "mocha": "^10.7.3",
+    "@types/mocha": "^10.0.9"
+  }
+}
